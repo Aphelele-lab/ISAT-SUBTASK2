@@ -1,0 +1,94 @@
+
+# Function 4: Hexadecimal to Decimal
+def hexadecimal_to_decimal(hexadecimal):
+    hexadecimal = hexadecimal.upper()
+    hexadecimal_digits = "0123456789ABCDEF"
+
+    decimal = 0
+
+    for digit in hexadecimal:
+        value = hexadecimal_digits.index(digit)
+        decimal = decimal * 16 + value
+
+    return decimal
+
+
+# Main menu
+def main():
+    while True:
+        print("\n===================================")
+        print("     NUMBER CONVERSION PROGRAM")
+        print("===================================")
+        print("1. Convert Decimal to Binary")
+        print("2. Convert Binary to Decimal")
+        print("3. Convert Decimal to Hexadecimal")
+        print("4. Convert Hexadecimal to Decimal")
+        print("5. Exit")
+        print("===================================")
+
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            try:
+                decimal = int(input("Enter a decimal number: "))
+
+                if decimal < 0:
+                    print("Please enter a positive integer.")
+                else:
+                    result = decimal_to_binary(decimal)
+                    print("Binary:", result)
+
+            except ValueError:
+                print("Invalid input. Please enter an integer.")
+
+        elif choice == "2":
+            binary = input("Enter a binary number: ")
+
+            if binary == "" or any(digit not in "01" for digit in binary):
+                print("Invalid binary number. Use only 0 and 1.")
+            else:
+                result = binary_to_decimal(binary)
+                print("Decimal:", result)
+
+        elif choice == "3":
+            try:
+                decimal = int(input("Enter a decimal number: "))
+
+                if decimal < 0:
+                    print("Please enter a positive integer.")
+                else:
+                    result = decimal_to_hexadecimal(decimal)
+                    print("Hexadecimal:", result)
+
+            except ValueError:
+                print("Invalid input. Please enter an integer.")
+
+        elif choice == "4":
+            hexadecimal = input("Enter a hexadecimal number: ")
+
+            hexadecimal = hexadecimal.upper()
+
+            if hexadecimal == "" or any(
+                digit not in "0123456789ABCDEF"
+                for digit in hexadecimal
+            ):
+                print("Invalid hexadecimal number.")
+            else:
+                result = hexadecimal_to_decimal(hexadecimal)
+                print("Decimal:", result)
+
+        elif choice == "5":
+            print("Thank you for using the conversion program.")
+            break
+
+        else:
+            print("Invalid choice. Please select an option from 1 to 5.")
+
+
+# Start the program
+main()
+
+    // Write C++ code here
+    std::cout << "Start small. Ship something.";
+
+    return 0;
