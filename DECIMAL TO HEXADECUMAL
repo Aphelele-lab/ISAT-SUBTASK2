@@ -1,0 +1,28 @@
+hexadecimal_digits = "0123456789ABCDEF"
+    hexadecimal = ""
+
+    while decimal > 0:
+        remainder = decimal % 16
+        hexadecimal = hexadecimal_digits[remainder] + hexadecimal
+        decimal = decimal // 16
+
+    return hexadecimal
+
+
+# Function 4: Hexadecimal to Decimal
+def hexadecimal_to_decimal(hexadecimal):
+    hexadecimal = hexadecimal.upper()
+    hexadecimal_digits = "0123456789ABCDEF"
+
+    decimal = 0
+
+    for digit in hexadecimal:
+        value = hexadecimal_digits.index(digit)
+        decimal = decimal * 16 + value
+
+    return decimal
+
+
+# Main menu
+def main():
+    while True:
